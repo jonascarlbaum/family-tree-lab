@@ -120,8 +120,8 @@ export default class Tree {
         html2canvas(this.element, {
             backgroundColor: "rgba(0,0,0,0)",
             imageTimeout: 0,
-            windowWidth: 1920,
-            windowHeight: 1200
+            windowWidth: window.innerWidth,
+            windowHeight: window.innerHeight
         }).then((canvas) => {
             this.wrapper.removeAttribute('style');
             this.element.removeAttribute('style');
