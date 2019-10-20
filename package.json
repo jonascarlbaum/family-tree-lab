@@ -5,7 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "watch": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "build.dev": "webpack --mode=development",
+    "start": "webpack-dev-server --inline --open",
+    "tests": "jest"
   },
   "browserslist": [
     "last 3 versions"
@@ -35,6 +38,7 @@
     "sugarss": "^2.0.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.2",
     "webpack-zip-files-plugin": "^1.0.0"
   },
   "dependencies": {

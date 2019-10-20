@@ -1,14 +1,8 @@
 {
   "presets": [
-    "env"
+    "@babel/env"
   ],
   "plugins": [
-    "transform-runtime",
     "@babel/plugin-proposal-class-properties"
-  ],
-  "parserOpts": {
-    "plugins": [
-      "dynamicImport"
-    ]
-  }
+  ]
 }

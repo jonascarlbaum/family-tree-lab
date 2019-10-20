@@ -10,7 +10,7 @@ export default class Rectangle {
     this.y = point.y;
 
     this.top = point.y;
-    this.right = point.x + dimensions.width ;
+    this.right = point.x + dimensions.width;
     this.bottom = point.y + dimensions.height;
     this.left = point.x;
   }
@@ -47,10 +47,7 @@ export default class Rectangle {
   }
   
   resetPosition() {
-    this.point.x = 0;
-    this.point.y = 0;
-
-    return this;
+    return this.clone().translate(new Point(-this.point.x, -this.point.y));
   }
 
   scaleToBounds(bounds) {

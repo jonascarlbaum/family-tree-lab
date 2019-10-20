@@ -12,11 +12,23 @@ export default class Viewport {
     this.left = center.x - dimensions.width / 2;
   }
 
+  static From(rect) {
+    return new Viewport(rect.getCenter(), rect.dimensions.clone())
+  }
+
+  scale(scale, i) {
+    return new Viewport(this.center, this.getDimensions().scale(scale));
+  }
+
   getCenter() {
     return new Point(this.x, this.y);
   }
 
   getDimensions() {
     return new Dimensions(this.right - this.left, this.bottom - this.top);
+  }
+
+  toString() {
+    return `(${this.left}, ${this.top})(${this.right}, ${this.bottom})`;
   }
 }
