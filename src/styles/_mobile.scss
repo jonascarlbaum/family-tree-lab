@@ -1,0 +1,61 @@
+@media only screen and (max-width: 767px) {
+    figure.tree-wrapper {
+        height: auto!important;
+        figcaption {
+            display: none;
+        }
+        
+        ul.tree {
+            margin-left: -1em!important;
+            .person {
+                line-height: 1.4;
+                margin: 0!important;
+            }
+            li > .person {
+                margin-top: 0.5em!important;
+            }
+
+            &,
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style-type: none!important;
+                position: relative;
+            }
+            
+            li {
+                border-left: 2px solid #000;
+                margin-left: 1em;
+                padding-left: 0.5em;
+                position: relative;
+                line-height: 1;
+                
+                li {
+                    margin-top: 0;
+                    margin-left: 0;
+                }
+                &::before {
+                    content:'┗';
+                    color: #000;
+                    position: absolute;
+                    top: 0.5em;
+                    left: -9px;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -2px;
+                    width: 2px;
+                    height: 1em;
+                    background-color: #000;
+                }
+            }
+            > li:last-child,
+            ul > li:last-child {
+                border-left: 2px solid transparent;
+            }
+        }
+    }
+}

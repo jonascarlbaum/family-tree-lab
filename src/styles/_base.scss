@@ -1,0 +1,38 @@
+figure.tree-wrapper {
+    user-select: none;
+    
+    ul.tree {
+        margin-left: 0;
+
+        span.person {
+            border: solid .1em #666;
+            border-radius: .2em;
+            display: inline-block;
+            margin: 0 .2em .5em;
+            padding: .2em .5em;
+            position: relative;
+
+            .name {
+                font-weight: bold;
+            }
+            
+            .gender {
+                margin-left: 0.5em;
+                font-weight: bold;
+            }
+                
+            .spouse > span.person {
+                background-color: #ffeeee;
+            }
+            
+            > span:not(.name):not(.gender) {
+                display: block;
+            }
+        }
+
+        li > span.person {
+            background-color: #fafafa;
+            min-width: 150px;
+        }
+    }
+}

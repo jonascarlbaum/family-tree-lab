@@ -1,0 +1,106 @@
+@media only screen and (min-width: 768px) {
+    figure.tree-wrapper {
+        position: relative;
+        overflow: hidden;
+        background-color: #efefef;
+    
+        & > figcaption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 0;
+            z-index: 1;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease-in-out;
+            background-color: rgba(64,64,96,0.75);
+
+            & > code {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.25);
+                border-radius: 0;
+            }
+        }
+
+        &:hover {
+            > figcaption {
+                opacity: 1;
+                pointer-events: all;
+                box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+    ul.tree {
+        margin: 0 0 1em!important;
+        text-align: center;
+
+        &, 
+        ul, 
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        &, ul {
+            display: table;
+        }
+
+        ul {
+            width: 100%;
+            text-align: center;
+        }
+
+        li {
+            display: table-cell;
+            padding: .5em 0;
+            vertical-align: top;
+            text-align: center;
+            
+            &:before {
+                outline: solid 1px #666;
+                content: "";
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            
+            &:first-child:before {
+                left: 50%;
+            }
+
+            &:last-child:before {
+                right: 50%;
+            }
+        }
+
+        ul:before,
+        li > span.person:before {
+            outline: solid 1px #666;
+            content: "";
+            height: .5em;
+            left: 50%;
+            position: absolute;
+        }
+
+        ul:before {
+            top: -.5em;
+        }
+
+        li > span.person:before {
+            top: -.55em;
+        }
+
+        > li {
+            margin-top: 0;
+            &:before,
+            &:after,
+            > span.person:before {
+                outline: none;
+            }
+        }
+    }
+}
